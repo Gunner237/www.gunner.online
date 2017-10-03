@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Prime Finder | Gunner Intranet</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            localStorage.directory = "tools"
+            </script>
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <br>
+        <div id="title" class="pageText">Prime Finder</div>
+        <div class="pageText">
+            <form name="login" id="loginForm">
+                <span class="heading" id="unsecure_span">Input: <input type="text" class="longButton" id ="input" onKeyUp="return prime()" name="userid"/></br></span>
+            </form>
+            
+            <div id="result" class="text">Nothing has been submitted.</div>
+            <p>
+            <div class="text">This page was created thanks to a request from a friend to see in how few lines I could create a primeFinder code.<p>If you are interested, this is the single line of code used:<br>function isPrime(value) {for(var i = 2; i < value; i++) {if(value % i === 0) {return false}}return value > 1;}</div>
+        </div>
+        <script>
+            
+            
+            function prime(){
+                var unhashed = null;
+                var hashed = null;
+                //unhashed = prompt("What do you want to be hashed?")
+                var value = document.getElementById("input").value;
+                var result = isPrime(value)
+                //document.getElementById(type+"_input").innerHTML = unhashed
+                if (result == true){
+                    document.getElementById("result").innerHTML = value+" is a prime number."
+                }
+                else{
+                    if (isNaN(value) == true){
+                        document.getElementById("result").innerHTML = "You have not entered a valid number."
+                    }
+                    else if (value == ""){
+                        document.getElementById("result").innerHTML = "Nothing has been submitted."
+                    }
+                    else{
+                        document.getElementById("result").innerHTML = value+" is not a prime number."
+                    }
+                }
+            }
+                
+                function isPrime(value) {for(var i = 2; i < value; i++) {if(value % i === 0) {return false}}return value > 1;}
+                
+            </script>
+        
+        <br>
+        
+        <script src="https://scripts.gunner.online/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>    </body>
+</html>

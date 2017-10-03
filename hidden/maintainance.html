@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Sorry | Gunner Intranet</title>
+        <script src="http://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard-prefix")
+            localStorage.directory = "other"
+            </script>
+    </head>
+    <body>
+        <noscript version="1.1" lastUpdated="26/5/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<span class="footer_right">Gunner Website</span></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.1 (26/5/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class="pageText">
+            <div id = "title">We're sorry.</div>
+            <div class = "text"><span>This page is currently down for maintainance. Please try again later.</span><p><span>Click on the following link to try again:</span><br><a class="link" id="link"></a>
+            
+            <noscript>
+                <span>As JavaScript is disabled in your browser, we cannot detect which page you were trying to access.</span>
+            <a class="link" href="https://noscript.gunner.online">Click here to return to the home page</a></noscript>
+            </div><br>
+<br>
+
+            <script>
+                
+                if (localStorage.prevPage == undefined){
+                    document.getElementById("link").href = "https://www.gunner.online"
+                    document.getElementById("link").innerHTML = "The page name could not be found. Click here to return to the home page."
+                }
+            else{
+                document.getElementById("link").href = localStorage.prevPage;
+                document.getElementById("link").innerHTML = localStorage.prevPage;
+            }
+                </script>
+            <script src="http://scripts.gunner.online/page_footer.js">
+                </script>
+            <script>
+                window.onload = footer("beta")
+                </script>
+    </body>
+</html>

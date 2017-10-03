@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Table | &copy; Seb Gunner 2016</title>
+        <script src="scripts/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("legacy_desktop")
+            </script>
+        </head>
+    <body>
+    
+<table style=:width:100% id = "timeTable1">
+    <tr>
+        <th></th>
+        <th>Bookie1</th>
+        <th>Bookie2</th>
+        <th>TT1</th>
+        <th>TT2</th>
+        <th>TT3</th>
+        <th>TT4</th>
+    </tr>
+    <tr>
+        <th>Monday</th>
+        <td id=1>Clear</td>
+        <td id=2>Clear</td>
+        <td id=3>Clear</td>
+        <td id=4>Clear</td>
+        <td id=5>Clear</td>
+        <td id=6>Clear</td>
+    </tr>
+    <tr>
+        <th>Tuesday</th>
+        <td id=7>N/A</td>
+        <td id=8>N/A</td>
+        <td id=9>Clear</td>
+        <td id=10>Clear</td>
+        <td id=11>Clear</td>
+        <td id=12>Clear</td>
+    </tr>
+    <tr>
+        <th>Wednesday</th>
+        <td id=13>Clear</td>
+        <td id=14>N/A</td>
+        <td id=15>Clear</td>
+        <td id=16>Clear</td>
+        <td id=17>Clear</td>
+        <td id=18>Clear</td>
+    </tr>
+    <tr>
+        <th>Thursday</th>
+        <td id=19>Clear</td>
+        <td id=20>N/A</td>
+        <td id=21>Clear</td>
+        <td id=22>Clear</td>
+        <td id=23>Clear</td>
+        <td id=24>Clear</td>
+    </tr>
+    <tr>
+        <th>Friday</th>
+        <td id=25>Clear</td>
+        <td id=26>Clear</td>
+        <td id=27>Clear</td>
+        <td id=28>Clear</td>
+        <td id=29>Clear</td>
+        <td id=30>Clear</td>
+    </tr>
+    <tr>
+        <th>Saturday</th>
+        <td id=31>Clear</td>
+        <td id=32>N/A</td>
+        <td id=33>Clear</td>
+        <td id=34>Clear</td>
+        <td id=35>Clear</td>
+        <td id=36>Clear</td>
+    </tr>
+    <tr>
+        <th>Sunday</th>
+        <td id=37>Clear</td>
+        <td id=38>Clear</td>
+        <td id=39>Clear</td>
+        <td id=40>Clear</td>
+        <td id=41>Clear</td>
+        <td id=42>Clear</td>
+    </tr>
+
+</table>
+
+<script>
+    
+    function addEvent(){
+        var rowno = prompt("what row number?")
+        var colno = prompt("what col number?")
+    //gets table
+    var oTable = document.getElementById('timeTable1');
+    
+    //gets rows of table
+    var rowLength = oTable.rows.length;
+    
+    //loops through rows
+    for (i = 0; i < rowno; i++){
+        
+        //gets cells of current row
+        var oCells = oTable.rows.item(i).cells;
+        
+        //gets amount of cells of current row
+        var cellLength = oCells.length;
+        
+        //loops through each cell in current row
+        for(var j = 0; j < colno; j++){
+            
+            // get your cell info here
+            
+            var cellVal = oCells.item(j).innerHTML;
+        }
+    }
+    console.log(cellVal)
+    }
+</script>
+
+<input id="Steve" type="button" value="start thing" onclick="addEvent();" />
+                                </br></br><span><font size="3" color="black"> &copy; Sebastian Gunner 2016 </font>
+
+</body>

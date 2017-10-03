@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>ASCII Base Converter | Gunner Website</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            localStorage.directory = "tools"
+            </script>
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <br>
+        <div id="title" class="pageText">ASCII Base Encoder</div>
+        <div class="pageText">
+            <form id="enc" onSubmit="return baseConv('enc')">
+                <span class="heading">Input: <input type="text" class="longButton" id ="input" onKeyUp="return baseConv('enc')" placeholder="ASCII Characters"/></br></span>
+                <select id='baseopt' onClick="return baseConv('enc')">
+                    <option value="2">Base 2 (Binary)</option>
+                    <option value="3">Base 3</option>
+                    <option value="4">Base 4</option>
+                    <option value="4">Base 8</option>
+                    <option value="10">Base 10 (Displays ASCII codes)</option>
+                    <option value="16">Base 16 (Hexadecimal)</option>
+                </select>
+            </form>
+            
+            <div id="encresult" class="text">Nothing has been submitted.</div>
+            <p>
+            <div class="text">Use this tool to encode some plaintext as some numerical value in a different base.</div>
+            <button class="formbutton" onClick="copyToClipboard('encresult')">Copy Text</button>
+        </div>
+        <br>
+        <div id="category_border_small"><br></div><br><br>
+        
+        <div id="title" class="pageText">ASCII Base Decoder</div>
+        <div class="pageText">
+            <form id="dec" onSubmit="return baseConv('enc')">
+                <span class="heading">Input: <input type="text" class="longButton" id ="input" onKeyUp="return baseConv('dec')" placeholder=""/></br></span>
+                <select id='baseopt' onClick="return baseConv('dec')">
+                    <option value="2">Base 2 (Binary)</option>
+                    <option value="3">Base 3</option>
+                    <option value="4">Base 4</option>
+                    <option value="4">Base 8</option>
+                    <option value="10">Base 10 (Displays ASCII codes)</option>
+                    <option value="16">Base 16 (Hexadecimal)</option>
+                </select>
+            </form>
+            
+            <div id="decresult" class="text">Nothing has been submitted.</div>
+            <p>
+            <div class="text">Use this tool to decrypt a message in a different base into plaintext.</div>
+            <button class="formbutton" onClick="copyToClipboard('decresult')">Copy Text</button>
+            <br>
+            <i>
+            <div class="text">Looking to convert some numbers into a different base? Click <a href="baseConverter_num">here</a></div></i>
+        </div>
+        <script>
+            function baseConv(encdec){
+                if (encdec == 'enc'){
+                    base = enc.baseopt.value
+                    var convSplit = ['']
+                    var output
+                    var outputArray
+                    originalText = enc.input.value
+                    splitOriginal = originalText.split('')
+                    
+                    for (i=0;i<splitOriginal.length;i++){
+                        curChar = originalText.charCodeAt(i)
+                        convSplit[i] = curChar.toString(base)
+                        //console.log('ascii = '+originalText.charCodeAt(i)+' goes to '+convSplit[i])
+                        
+                    }
+                    output = convSplit.join(' ')
+                    
+                    
+                    
+                    //output = originalText
+                    if (output == ""){
+                        output = "Nothing has been submitted"
+                    }
+                    encresult.innerHTML = output
+                    //Stops page from refreshing
+                    return false
+                }
+                else if(encdec == 'dec'){
+                    //alert(dec.baseopt.value)
+                    //didnt automatically update
+                    //decresult.placeholder = "Base "+dec.baseopt.value
+                    
+                    base = dec.baseopt.value
+                    var convSplit = ['']
+                    var output
+                    var word = ['']
+                    originalText = dec.input.value
+                    splitOriginal = originalText.split(' ')
+                    
+                    for (i=0;i<splitOriginal.length;i++){
+                        curNum = splitOriginal[i]
+                        convSplit[i] = parseInt(curNum,base)
+                        word[i] = String.fromCharCode(convSplit[i])
+                    }
+                    //output = convSplit.join(' ')
+                    output = word.join('')
+                    
+                    if (output == ""){
+                        output = "Nothing has been submitted"
+                    }
+                    decresult.innerHTML = output
+                    //Stops page from refreshing
+                    return false
+                }
+                else{
+                    decresult.innerHTML = "ERROR"
+                }
+            }
+        </script>
+        
+        <br>
+        
+        <script src="https://scripts.gunner.online/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>    </body>
+</html>

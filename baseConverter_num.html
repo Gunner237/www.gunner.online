@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Numeric Base Converter | Gunner Website</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            localStorage.directory = "tools"
+            </script>
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <br>
+        <div id="title" class="pageText">Numeric Base Encoder</div>
+        <div class="pageText">
+            <form id="bcn" onSubmit="return baseConverter_num()">
+                <span class="heading">
+                    Input:
+                    <input type="text" class="longButton" id ="input" onKeyUp="return baseConverter_num()"/>
+                    </br>
+                </span>
+                <select id='baseopt1' onclick = 'baseConverter_num()'>
+                    <option value="2">Base 2 (Binary)</option>
+                    <option value="3">Base 3</option>
+                    <option value="4">Base 4</option>
+                    <option value="8">Base 8 (Octal)</option>
+                    <option value="10">Base 10 (Decimal)</option>
+                    <option value="16">Base 16 (Hexadecimal)</option>
+                </select>
+                <br>
+                <span class="text"> to </span>
+                <br>
+                <select id='baseopt2' onclick = 'baseConverter_num()'>
+                    <option value="2">Base 2 (Binary)</option>
+                    <option value="3">Base 3</option>
+                    <option value="4">Base 4</option>
+                    <option value="8">Base 8 (Octal)</option>
+                    <option value="10">Base 10 (Decimal)</option>
+                    <option value="16">Base 16 (Hexadecimal)</option>
+                </select>
+            </form>
+            
+            <div id="result" class="text">Nothing has been submitted.</div>
+            <p>
+            <div class="text">Use this tool to convert a number to a different base.</div><br>
+            <i><div class="text">Looking to convert some ASCII text into a different base? Click <a href="baseConverter.html">here</a></div></i>
+        </div>
+
+        <script>
+            function baseConv(input,startBase,finalBase){
+                var out = parseInt(input, startBase).toString(finalBase);
+                return out
+            }
+            
+            function baseConverter_num(){
+                result.innerHTML = baseConv(bcn.input.value,bcn.baseopt1.value,bcn.baseopt2.value)
+                return false
+            }
+        </script>
+        
+        <br>
+        
+        <script src="https://scripts.gunner.online/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>    </body>
+</html>

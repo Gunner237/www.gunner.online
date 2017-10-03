@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Documents | Gunner Intranet</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            localStorage.directory = "development"
+            </script>
+    </head>
+    
+    <!--Selects png file to be used as the iPhone icon when set as a bookmark-->
+    <link rel="apple-touch-icon" href="https://resources.gunner.online/iphone-icons/iphone-icon.png"/>
+    
+    <!--Makes page fullscreen when added as a bookmark to homescreen on iOS-->
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    
+    
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class="pagetext">
+            
+            <div id="title">Development</div>
+            
+            <div id="noscript_error"><noscript>Javascript appears to be disabled. Please enable it, as this page will not display correctly without it!</noscript></div>
+        </div>
+        <div class="pagetext">
+            <span class="text">Welcome to the Development page!<p>Access all pages that are currently in progress.
+                <p>
+                Please note that the MenuBar is likely to be updated with new links before this page is.
+                <p>
+                If you are not a <span class="tooltip">registered developer
+                    <span class="tooltiptext" id="regDev">You are not logged in.</span>
+                </span>
+                please click on this link and login again: </span>
+            <a class="link" href="hidden/cleanse.html">Secure Logout</a>
+            <p>
+            <span class="text">If this issue reoccurs, <a href="contact.html" class="link">please email me.</a></span>
+            <p>
+            
+        </div>
+        <div id="category_border" class="video">
+            <div id="blank">Development Pages</div>
+        </div>
+        <div class="pagetext">
+            <div class="img">
+                <a href="https://betasite.gunner.online/testSite.html">
+                    <img src="https://resources.gunner.online/placeholdersite2.png" alt="Test Site" width="600" height="400">
+                        </a>
+                <div class="text">Test Site</div>
+            </div>
+            <div class="img">
+                <a href="https://betasite.gunner.online/videoGalleryBeta.html">
+                    <img src="https://resources.gunner.online/placeholdersite2.png" alt="Test Site" width="600" height="400">
+                        </a>
+                <div class="text">Video Gallery v2.1</div>
+            </div>
+            
+        </div>
+        <script>
+            function regDev(name){
+                if (name == "Gunner Developer"){
+                    console.log("Valid Developer - ID: "+localStorage.username)
+                    document.getElementById("regDev").innerHTML = "Valid Developer - ID: "+localStorage.username;
+                }
+                else if (name == "Sebastian"){
+                    console.log("Valid Developer - ID: "+localStorage.username)
+                    document.getElementById("regDev").innerHTML = "Valid Developer - ID: "+localStorage.username;
+                }
+                else{
+                    console.warn("Invalid Developer - ID: "+localStorage.username)
+                    alert("You are not a valid developer - ID: "+localStorage.username)
+                    alert("You are now being logged out securely.")
+                    window.location.href="https://www.gunner.online/hidden/cleanse.html"
+                }
+            }
+        regDev(localStorage.username);
+            </script>
+        <script src="https://scripts.gunner.online/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>
+        
+        
+    </body>
+    
+</html>

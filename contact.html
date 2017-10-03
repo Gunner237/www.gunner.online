@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Contact | Gunner Website</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            localStorage.directory = "home"
+            </script>
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class="pageText">
+            <h1>Contact me</h1>
+        </div>
+
+        <div id="category_border">
+            <div id="aboutMe">About me</div>
+        </div>
+        <div class="pageText">
+            <p class="text">I am an amateur programmer from Hampshire, UK.<br> I am currently 17 years old, studying Maths, Physics and German for A Level.</p>
+            <p class="text">I started to learn JavaScript in Summer 2016, and have since taught myself HTML and CSS, while continuing to expand my JavaScipt knowledge.<br>I am also learning MATLAB, and plan to learn jQuery and PHP in the near future</p>
+            
+        </div>
+        <div id="category_border">
+            <div id="contact">Contact</div>
+        </div>
+        <div class="pageText">
+            
+            <p class="text">You can contact me either using the form below, or by using <a class="link" href="#clientLinks">the client-links at the bottom of the page.</a> </p>
+            <p class="text">The client-links will open your native email client on your device, with my email address and the subject pre-filled. Please do NOT change these, as these designate which mailbox the message gets sent to.
+            <p class="text">However, it is most likely easier to use the form below. This uses code from <a class="link" href="http://formspree.io">formspree.io.</a><br>Formspree will forward your message, along with your email address in the reply-to to me. For information on their privacy policy, click <a class="link" target="_blank" href="https://formspree.io/static/PrivacyPolicy.pdf">here.</a><br><br>
+            </p>
+        </div>
+        <div id="category_border_small">
+            <div id="clientLinks">Contact me using formspree.io</div>
+        </div>
+        
+        <style>
+            </style>
+        
+        <div class="pageText">
+            
+            <form method="POST" action="https://formspree.io/gunnerwebsite@gmail.com">
+                
+                <input type="email" name="Email Address" value="Your email address"><br>
+                    
+                    <input type="text" name="_subject" value="Subject" /><br>
+                    
+                    <textarea name="Message">Your message</textarea><br>
+                    
+                    <button class="formButton" type="submit">Send</button>
+                    
+                    <input type="hidden" name="_format" value="plain" />
+                    
+                    <input type="hidden" name="_next" value="https://www.gunner.online/contact#thanks" />
+                    </form>
+            
+            <div id="thanks">
+                <span class="heading">Thanks!</span><br>
+                <span class="text">Your email has been sent.</span>
+            </div>
+            <script>
+                if (window.location.hash == "#thanks"){
+                    document.getElementById("thanks").style.display="block";
+                }
+            else {
+            }
+            </script>
+            <style>
+                
+                #thanks{
+                    display:none
+                }
+            </style>
+            
+            
+        </div>
+        <div id="category_border_small">
+            <div id="clientLinks">Contact me via email using your email client.</div>
+        </div>
+        <span class="pageText" id="left">
+            <a class = "link" href="#help_request" onClick="return sendMail('help')">Help request</a>
+            <span class="text"> | </span>
+            <a class = "link" href="#email_to_admin" onClick="return sendMail('admin')">Admin</a>
+            <span class="text"> | </span>
+            <a class = "link" href="#general" onClick="return sendMail('general')">General Correspondence</a><br><br>
+        </span>
+        </p>
+        <br><script src="https://scripts.gunner.online/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>
+    </body>
+</html>

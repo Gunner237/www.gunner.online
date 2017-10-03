@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>Number Guesser | Gunner Website</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("legacy_desktop")
+            localStorage.directory = "games"
+            </script>
+        
+        <script type="text/javascript">
+            
+            if (screen.width <= 800) {
+                window.location = "https://mobile.gunner.online/numberGuesser";
+            }
+        </script>
+        
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class="pageText"><br>
+            <span id="title">Welcome to Number Guesser</span>
+            </br><span class="text"> Last updated 2/10/2017
+                </br> Changelog: Fixed a bug that meant you couldn't lose; Cleaned up code.</span>
+            </br>
+            </br>
+            <!------------------------------------------------Notices------------------------------------------------------------>
+            <font class="heading">Notices:</font>
+            <noscript>
+                </br><span class="noscript_error">Your browser does not have JavaScript enabled. Please enable it to play Number Guesser. </br>
+                    No part of this page will function without JavaScript.<br>
+                </span>
+            </noscript>
+            <font class="notice">Please allow Pop-up boxes.</font>
+            <!------------------------------------------------/Notices------------------------------------------------------------>
+            </br>
+        </div>
+        <script>
+            
+            // defines variables
+            var myName = "Guest"
+            
+            //--------------------------------------------Start of main code (JS)----------------------------------------------
+            function numberGuesser() {
+                
+                function getRandomIntInclusive(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+                var guessesTaken = 0
+                var myName = prompt("Hello! What is your name?")
+                if (myName == null) {
+                    console.log("Operation canceled")
+                    return
+                }
+                else {console.log("Name logged as " + myName)}
+                
+                var upperBound = prompt("What do you want the highest number to be?")
+                
+                if (upperBound == null){
+                    return
+                }
+                else if (isNaN(upperBound) == true){
+                    alert("Sorry, "+upperBound+" is not a valid number.")
+                    return
+                }
+                console.log("Highest number logged as " + upperBound)
+                
+                number = getRandomIntInclusive(1, (upperBound)) //random.randint was python equivalent.
+                alert ("Ok, " + myName + ", I have a number between 1 and " + upperBound + " that I would like you to guess!")
+                
+                console.log("Number of guesses will be " + (Math.ceil(Math.sqrt(Math.sqrt(upperBound)))))
+                
+                while (guessesTaken < (Math.ceil(Math.sqrt(Math.sqrt(upperBound))))) {
+                    var guess = prompt("Take a guess.")
+                    
+                    console.log("Guess recognised as " + guess)
+                    
+                    var guessesTaken = guessesTaken + 1
+                    
+                    if (guess < number) {
+                        alert("Afraid not. Too low!")
+                        console.log("Guess of " + guess + " is low")
+                    }
+                    
+                    else if (guess > number) {
+                        alert("Afraid not. Too high!")
+                        console.log("Guess of " + guess + " is high")
+                    }
+                    
+                }
+                
+                if (guess == number) {
+                    alert("Nice one " + myName + "! You got my number in " + guessesTaken + " guess(es)!")
+                    var guessed = 1
+                    console.log("Guess correct")
+                }
+                
+                else {
+                    alert("Sorry, the number I actually chose was " + number + ". Better luck next time!")
+                    var guessed = 0
+                    console.log("Number announced as " + number)
+                }
+                
+                if (guessed == 1) {
+                    
+                    document.getElementById("Results").innerHTML = ("Well done! Number chosen by the computer within the bounds of 1 - " + upperBound + " was: " + number + ". Guessed by " + myName + " in " + guessesTaken + " guess(es)!");
+                }
+                else {
+                    document.getElementById("Results").innerHTML = ("Unlucky, "+myName+". The number chosen by the computer within the bounds of 1 - " + upperBound + " was: " + number + ".");
+                }
+                console.log("process ended")
+                return
+            }
+        //------------------------------------------------------End of Game JavaScript---------------------------------------------------
+            </script>
+        
+        <div class="pageText">
+            <div id="Results" class="text">
+                Game results will be displayed here.</br>
+            </div>
+            </br>
+            <button onclick="numberGuesser()">Click me to play!</button>
+            
+            <script src="https://scripts.gunner.online/page_footer.js">
+                </script>
+            <script>
+                window.onload = footer("standard")
+                </script>
+            
+            </body>
+</html>
+

@@ -1,0 +1,223 @@
+<html>
+    <head>
+        <title>Gunner Home</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            </script>
+    </head>
+    <!--Refers back to the css page-->
+    <link rel="stylesheet" type="text/css" href="https://www.gunner.online/mobile.css"</link>
+        
+        <!--Selects png file to be used as the iPhone icon when set as a bookmark-->
+        <link rel="apple-touch-icon" href="https://resources.gunner.online/iphone-icons/index-iphone-icon.png"/>
+        
+        <!--Makes page fullscreen when added as a bookmark to homescreen on iOS-->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+        
+        <body>
+            
+            <div id="title" align = "center">Mobile Home Page</div>
+            <a onClick="return landingPageChangelog_onclick()">Complete Changelog </a><br>
+            <div id="noscript_error"><noscript>Javascript appears to be disabled. Please enable it, as none of these links will work without it!</noscript></div>
+            <!-----------------External Sites-------------->
+            
+            
+            <!--p class = "heading">
+             List of Gunner Systems: </p-->
+            
+            <div style = "text-align:center">
+                
+                <p>
+                <!--a href="ds-router://">Launch Mail app (test)</a><br/-->
+                <font class="heading"><b>
+                    List of commonly used external sites: </font><br></b><br>
+                
+                <a href="https://www.google.co.uk/">
+                    <img src="https://resources.gunner.online/google.png" alt="HTML5 Icon" style="width:45vw;height:15vw;"></a>
+                <br>
+                <a href="https://www.apple.co.uk/">
+                    <img src="https://resources.gunner.online/apple.png" alt="HTML5 Icon" style="width:12vw;height:15vw;"><br><br></a>
+                
+                <a href="https://www.bbc.co.uk/">
+                    <img src="https://resources.gunner.online/bbc.png" alt="HTML5 Icon" style="width:35vw;height:10vw;"><br><br></a>
+                
+                <a href="https://portal.office365.com">
+                    <img src="https://resources.gunner.online/owa.png" alt="HTML5 Icon" style="width:25vw;height:24vw;"><br><br></a>
+                
+                <a href="https://www.wolframalpha.com">
+                    <img src="https://resources.gunner.online/wolframAlpha.png" alt="HTML5 Icon" style="width:95vw;height:11vw;"><br></a>
+                
+                <a href="https://www.youtube.com/feed/subscriptions">
+                    <img src="https://resources.gunner.online/youtube.png" alt="HTML5 Icon" style="width:55vw;height:35vw;"><br></a>
+                
+                <a href="https://81.187.8.46:50294">
+                    <img src="https://resources.gunner.online/synology.png" alt="HTML5 Icon" style="width:75vw;height:21vw;"><br>GunExtServer01 <br><br></a>
+                
+                <div class="heading">
+                List of internal sites: </div>
+                <div class="text">
+                    If the link is green, it is a mobile-optimised site
+                    </div>
+                
+                <p>
+                <a onClick="return gunSystems_onclick()" class = "mobileCompatible">Gunner Systems</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_gunSystems()" /><br>
+                
+                <a onClick="return onetwothree_onclick()">Javascript Test</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_onetwothree()" /><br>
+                
+                <a onClick="return phpTest_onclick()">PHP Test</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_phpTest()" /><br>
+                
+                <a onClick="return javascriptBase_onclick()">Javascript HTML Template</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_javascriptBase()" /><br>
+                
+                <a onClick="return login_onclick()">Login</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_login()" /><br>
+                
+                <a onClick="return numberGuesser_onclick()" class = "mobileCompatible">Number Guesser</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_numberGuesser()" /><br>
+                
+                <a onClick="return piFinder_onclick()" class = "mobileCompatible">Pi Finder</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_piFinder2()" /><br>
+                
+                <a onClick="return rockPaperScissors_onclick()" class = "mobileCompatible">Rock Paper Scissors simulator</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_rockPaperScissors()" /><br>
+                
+                <a onClick="return table_onclick()">Table</a><br>
+                <input type="button" class="button" value = "About this page" onClick="return about_table()" /><br><br>
+                
+                
+                <br><a onClick="return archiveCatalog_onclick()">Looking for previous versions? Click here to go to the archive catalog</a><br>
+                
+                </p>
+                
+            </div>
+            
+        </body>
+        <script>
+            
+            //-------------------------------------LINKS TO PAGES------------------------------
+            
+            // This changes the reaction of the link, depending if the page is in beta or not. If it is, it will go up a directory "../abc.html" to find the page.
+            
+            // The rest of the functions simply tell the webpage to load a different html file upon an element being clicked
+            function gunSystems_onclick(){
+                window.location.href =  "https://www.gunner.online/gunSystemsMobile.html"
+            }
+        
+        function landingPageChangelog_onclick(){
+            window.location.href =  "https://www.gunner.online/archiveCatalog.html"
+        }
+        
+        function onetwothree_onclick(){
+            window.location.href =  "https://www.gunner.online/123.js"
+        }
+        
+        function javascriptBase_onclick()
+        {
+            window.location.href = "https://www.gunner.online/javascriptBase.html"
+        }
+        
+        function phpTest_onclick()
+        {
+            window.location.href = "http://192.168.16.13/phpTest.php"
+        }
+        
+        function login_onclick()
+        {
+            window.location.href = "https://www.gunner.online/login.html"}
+        
+        function numberGuesser_onclick()
+        {
+            window.location.href = "https://www.gunner.online/numberGuesserMobile.html"}
+        
+        function piFinder_onclick()
+        {
+            window.location.href = "https://www.gunner.online/piFinderMobile.html"
+        }
+        
+        function rockPaperScissors_onclick()
+        {
+            window.location.href = "https://www.gunner.online/rockPaperScissorsMobile.html"
+        }
+        
+        function table_onclick()
+        {
+            window.location.href = "https://www.gunner.online/table.html"
+        }
+        
+        function archiveCatalog_onclick()
+        {
+            window.location.href = "https://www.gunner.online/archiveCatalog.html"
+        }
+        //------------------------------------END OF ONCLICK ENTRIES----------------------------
+        //------------------------------------LINK DESCRIPTIONS----------------------------------
+        // Changes the text in the "about_app" element with these descriptions.
+        function about_gunSystems() {
+            document.getElementById("about_app").innerHTML = "An internal site containing links and images of all the main Gunner Systems";
+            alert("An internal site containing links and images of all the main Gunner Systems");
+        }
+        
+        function about_onetwothree() {
+            document.getElementById("about_app").innerHTML = "This is a sample script. It performs no function and does not display properly when viewed in a webpage.";
+            alert("This is a sample script. It performs no function and does not display properly when viewed in a webpage.");
+        }
+        
+        function about_javascriptBase() {
+            document.getElementById("about_app").innerHTML = "This is a template for an HTML document with a Javascript script.";
+            alert("This is a template for an HTML document with a Javascript script.");
+        }
+        
+        function about_phpTest() {
+            document.getElementById("about_app").innerHTML = "This is an HTML test environment for a PHP script.";
+            alert("This is an HTML test environment for a PHP script.");
+        }
+        
+        function about_login() {
+            document.getElementById("about_app").innerHTML = "This is a login script, which was later adapted for the Number Guesser.";
+            alert("This is a login script, which was later adapted for the Number Guesser.");
+        }
+        
+        function about_numberGuesser() {
+            document.getElementById("about_app").innerHTML = "This is a Number guessing game. You give the computer an upper bound, and it will choose a number, which you then have to guess.";
+            alert("This is a Number guessing game. You give the computer an upper bound, and it will choose a number, which you then have to guess.");
+        }
+        
+        function about_piFinder() {
+            document.getElementById("about_app").innerHTML = "This page contains scripts which will slowly calculate Pi from a series of differnt formulae.";
+            alert("This page contains scripts which will slowly calculate Pi from a series of differnt formulae.");
+        }
+        
+        function about_piFinder2() {
+            document.getElementById("about_app").innerHTML = "This page contains scripts which will slowly calculate Pi from a series of differnt formulae. Includes the significanly faster Nilakantha formula.";
+            alert("This page contains scripts which will slowly calculate Pi from a series of differnt formulae. Includes the significanly faster Nilakantha formula.");
+        }
+        
+        function about_rockPaperScissors() {
+            document.getElementById("about_app").innerHTML = "This is a rock, paper, scissors simulator. You play against an AI.";
+            alert("This is a rock, papaer, scissors simulator. You play against an AI.");
+        }
+        
+        function about_table() {
+            document.getElementById("about_app").innerHTML = "This is an HTML template containing a table.";
+            alert("This is an HTML template containing a table.");
+        }
+        
+        function about_toytimeAllocator() {
+            document.getElementById("about_app").innerHTML = "This is an application which will, when successfully implemented, will allocate Toytimes to be done in given time periods. Currently non-functioning (2017-02)";
+            alert("This is an application which will, when successfully implemented, will allocate Toytimes to be done in given time periods. Currently non-functioning (2017-02)");
+        }
+        </script>
+        
+        <br>
+        <body>
+            <p class = "heading" align = "center">About this page:</p><br>
+            <div id= "about_app" align = "center"> You have not requested information about any page</div><br><br><br>
+            
+            <p><br><div class="text_footer" style = "text-align:center"> &copy; Sebastian Gunner 2017 </div><br>
+        </body>
+</html>

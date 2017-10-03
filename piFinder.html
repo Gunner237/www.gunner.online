@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <title>Pi Finder | Gunner Website</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("legacy_desktop")
+            localStorage.directory = "tools"
+            </script>
+        <!-------Last edited: 21/10/16 ----->
+        
+        <script type="text/javascript">
+            
+            if (screen.width <= 800) {
+                window.location = "https://mobile.gunner.online/piFinder";
+            }
+        </script>
+        
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class="pageText"><br>
+            <span><font id="title">Welcome to Pi Finder v2.0.2</font>
+                </br><font class="text"> Changelog </br>v2.0.0: Nilakantha calculating algorithm added. </br>
+                    v2.0.1: Small coding changes<br>
+                    v2.0.2: Adapted to conform with CSS file</font>
+                </br>
+                <!------------------------------------------------Notices------------------------------------------------------------>
+                <font class="heading">Notices:</font><font class="notice"> JS is current limitation - the Nilakantha series can calculate to 17 decimal places within 100k calculations. JS is limited to a 64-bit floating point.</font>
+                </br><font id="noscript_error"><noscript>Your browser does not have JavaScript enabled. Please enable it to generate Pi. </br>
+                    No part of this page will function without JavaScript.</br></noscript></font>
+                <font class="notice">Please allow Pop-up boxes if you are on Mozilla Firefox, Google Chrome or Microsoft Edge</font>
+                <!------------------------------------------------Notices------------------------------------------------------------>
+                </br></span>
+            <div>
+                <script>
+                    function nFormatter(num, digits) {
+                        var si = [
+                                  { value: 1E18, symbol: "Quintilion" },
+                                  { value: 1E15, symbol: "Quadrilion" },
+                                  { value: 1E12, symbol: "T" },
+                                  { value: 1E9,  symbol: "Bilions" },
+                                  { value: 1E6,  symbol: "M" },
+                                  { value: 1E3,  symbol: "k" }
+                                  ], rx = /\.0+$|(\.[0-9]*[1-9])0+$/, i;
+                                  for (i = 0; i < si.length; i++) {
+                                      if (num >= si[i].value) {
+                                          return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+                                      }
+                                  }
+                                  return num.toFixed(digits).replace(rx, "$1");
+                    }
+                
+                //Announces function to calculate pi - leibniz
+                function leibnizPi(){
+                    //Set variables as 1
+                    var pi4 = 1
+                    var singleCalc = 0.00001293/2
+                    var n = 1
+                    //Asks user how many times they would like the calculation to loop
+                    var runTime = prompt("How many times should the calculation be run?")
+                    console.log(runTime + " Calculations")
+                    
+                    //-----------------Warning system of duration for Leibniz series
+                    
+                    //If less than 100000 calcs, no warning is needed
+                    if (runTime < 100000){}
+                    //Various warnings for longer calculations
+                    else{
+                        if (singleCalc*runTime < 60){
+                            var exit = confirm("Projected duration of calculation is: " + (singleCalc*runTime) + " seconds")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return
+                            }
+                            else{console.log("Calculation commencing")}
+                        }
+                        
+                        else if (singleCalc*runTime <3600){
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/60) + " minutes")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                            else{console.log("Calculation commencing")}
+                        }
+                        
+                        else if (singleCalc*runTime <86400){
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/3600) + " hours")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                            else {console.log("Calculation Commencing")}
+                        }
+                        
+                        else if (singleCalc*runTime <604800){
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/86400) + " days")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                        }
+                        
+                        else if (singleCalc*runTime <31536000){
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/604800) + " weeks")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                        }
+                        
+                        else if (singleCalc*runTime <3155973600){
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/31536000) + " years")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                        }
+                        
+                        else if (singleCalc*runTime <31556952000){
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/3155973600) + " centuries")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                        }
+                        
+                        else{
+                            var exit = confirm("Projected duration of calculation is: " + ((singleCalc*runTime)/31556952000) + " millenia")
+                            if(exit == false){
+                                console.log("exit pressed")
+                                return;
+                            }
+                        }
+                        
+                    }
+                    
+                    //------------------------End of warning system
+                    var time = 1
+                    
+                    //Ensures calculation only commences a certain number of times
+                    while (time < runTime){
+                        
+                        //Pi is calculated using the formula (pi/4) = 1 - 1/3 + 1/5 - 1/7 etc..
+                        pi4 = pi4-(1/(n+2))+(1/(n+4))
+                        //This adds 4 to pi each time the calculation is run
+                        n = n + 4
+                        //Adds 1 to the amount of times the calculation has been run
+                        time = time + 2
+                        //As original formula uses pi/4 as one side of the calculation, the var pi4 must be multiplied to give actual value of pi
+                        pi = (pi4*4)
+                        
+                        //Prints the precision that pi is at after an percentage of the amount of times it is going to be run.
+                        if (time % (1000) == 0)
+                        {
+                            var readableTime = nFormatter(time,1)
+                            console.log("Pi currently " + pi)
+                            console.log("Operation " + readableTime)
+                        }
+                        else {}
+                        //Replaces the text (id = "pi") with the final value of pi
+                        document.getElementById("pi").innerHTML = pi;
+                    }
+                    //Unused fuction (clears pi)
+                    function clearPi(){
+                        var pi = 1
+                        document.getElementById("pi").innerHTML = "Pi has been cleared";
+                    }
+                }
+                //End of greg-leibniz script
+                
+                //----------------------------------START OF NILAKANTHA SERIES-----------------------------------
+                function nilakanthaPi (){
+                    // Predefining variables
+                    var runTime = prompt("How many times should the calculation be run?")
+                    if (runTime > 100000)
+                    {
+                        alert("WARNING! JS will not be able to calculate Pi any more accurately than with 100000 calculations")
+                    }
+                    else {}
+                    var time = 0
+                    var pi = 3 //* Potential issue due to variable having same name
+                    var n = 2 //* As above
+                    var k = 0
+                    
+                    //While loop to actually calc
+                    while (time < runTime){
+                        
+                        //actual calc
+                        denom = (n)*(n+1)*(n+2)
+                        
+                        numer = 4 * (Math.pow(-1,k)) // Math.pow used as ^ does not appear to be reliable for negative exponentials.
+                        
+                        pi = pi + (numer/denom)
+                        
+                        k = k+1
+                        n = n+2 //k = k+1 \n n = n+2
+                        time = time+1
+                        
+                        //end
+                        
+                        if (time % Math.ceil(runTime/20) === 0)
+                        {
+                            readableTime = nFormatter(time,1)
+                            console.log("Pi currently " + pi)
+                            console.log("Operation " + readableTime)
+                        }
+                        else {}
+                        document.getElementById("pi").innerHTML = pi;
+                        
+                    }
+                }
+                </script>
+                
+                </p>
+                <font class="heading">&pi; is: </font>
+                <div id ="pi" class="text"><b>&pi; has not been calculated yet...</b></div>
+                <input type="button" value = "Calculate &pi; using Leibniz series" onClick="leibnizPi();"/>
+                <input type="button" value = "Calculate &pi; using Nilakantha series" onClick="nilakanthaPi();"/>
+                <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh page">
+                    
+                    </br></br>
+                    </div>
+            <script src="https://scripts.gunner.online/page_footer.js">
+                </script>
+            <script>
+                window.onload = footer("standard")
+                </script>
+            </script>
+            </body>
+</html>

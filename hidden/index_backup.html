@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Index | Gunner Intranet</title>
+        <script src="scripts/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("home_redirect")
+            localStorage.directory = "home"
+            </script>
+    </head>
+    <!--Selects png file to be used as the iPhone icon when set as a bookmark-->
+    <link rel="apple-touch-icon" href="resources/index-iphone-icon.png"/>
+    <body>
+        <div id="noscript_error"><noscript>Javascript appears to be disabled. Please enable it, as none of these links will work without it.
+            <a href="indexLite.html">Click here to be taken to a page that does not require Javascript</a></noscript></div>
+        <div class="pageText">
+            <p><span id="title">Welcome to the Gunner Intranet<br></span><span class="text">
+                This page is a redirect portal to the preferred home sites of various users. If you are not logged in, this site should automatically redirect you to the home page. If it doesn't, please click "Home" in the Menu Bar above.<br>
+                This website will be updated semi-regularly, so don't be surprised to find that something has suddenly changed! <br>
+                <br>
+                If you ever want to find out what has changed recently you can find the complete changelog in the "Archive" tab in the Menu bar.<br>
+                <br>
+                Any questions, or problems you may encounter, please email me at seb@gunner.co.uk.</span></p>
+            
+            
+            <p><span class="heading">Known issues:</span>
+            <br>
+            <span class="text">- The menu bar does not display correctly on some mobile clients with low screen width.<br>
+                - The Internal Sites page is missing some links.<br>
+            </span>
+        </div>
+        
+        <script src="scripts/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>RPS | Gunner Intranet</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("legacy_desktop")
+            localStorage.directory = "games"
+            </script>
+        <script type="text/javascript">
+            
+            if (screen.width <= 800) {
+                window.location = "https://mobile.gunner.online/rockPaperScissors";
+            }
+        </script>
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class="pageText"><br>
+            <span><font id="title">Welcome to Rock, Paper, Scissors v1.1</font>
+                </br> Last updated 10/02/2017
+                </br><font class="text"> Changelog: Modified GUI </font>
+                </br>
+                </br>
+                <!------------------------------------------------Notices------------------------------------------------------------>
+                <font class="heading">Notices:</font>
+                </br><font class="noscript_error"><noscript>Your browser does not have JavaScript enabled. Please enable it to play Number Guesser. </br>
+                    No part of this page will function without JavaScript.</br></noscript></font>
+                <font class="notice">Please allow Pop-up boxes if you are on Mozilla Firefox, Google Chrome or Microsoft Edge</font><br>
+                <!------------------------------------------------Notices------------------------------------------------------------>
+                </br></span>
+            
+        </div>
+        <div class="pageText">
+            <div id="MyEdit" class="text">
+                The game has not been run, or it has crashed, or there was no outcome.
+            </div>
+        </div>
+        
+        <script>
+            var print = function (word){ //Sets print command as a shortcut
+                console.log(word)
+            }
+        function start() {
+            var computerChoice = Math.random() //Computer chooses random number
+            if (computerChoice <= 0.33) {
+                computerChoice = "rock";
+            } else if (computerChoice > 0.33 && computerChoice <= 0.66) {
+                computerChoice = "paper";
+            } else {
+                computerChoice = "scissors";
+            } print("Computer: " + computerChoice)//This proves that the computer choice is random, as it is chosen before the use makes their decision
+            
+            
+            var userChoice = prompt("Do you choose rock, paper or scissors?") //Lets user choose what they will use
+            print("Player: " + userChoice)
+            var userConfirm = confirm("You have chosen " + userChoice +". Is this OK?")
+            
+            confirm("The AI has chosen " + computerChoice + ".")
+            
+            var compare = function (choice1, choice2) {
+                if (choice1 === choice2){
+                    return "it was a tie"}
+                else if (choice1 === "rock"){
+                    if (choice2 === "scissors"){
+                        return "rock won"}
+                    else {
+                        return "paper won"}
+                }
+                else if (choice1 === "paper"){
+                    if (choice2 === "rock"){
+                        return "paper won"}
+                    else {
+                        return "scissors won"}
+                }
+                else if (choice1 === "scissors"){
+                    if (choice2 === "paper"){
+                        return "scissors won"}
+                    else {
+                        return "rock won"}
+                }
+            }
+            document.getElementById("MyEdit").innerHTML = ("The results were: Player chose " + userChoice + ". The AI chose " + computerChoice + ". Therefore the overall result was that " + compare(userChoice, computerChoice) + ". Thank you for playing.");
+            
+            confirm("You chose " + userChoice + ". The computer chose " + computerChoice + ". Therefore the outcome was that " + compare(userChoice, computerChoice)) + "."
+            
+            print(userChoice + " vs " + computerChoice + ". " + compare(userChoice, computerChoice)) + "."
+        }
+        </script>
+        <div class="pageText">
+            </br><button id = "guestPlay" onclick="start()">Play as guest</button>
+            <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh page">
+                </br></br><script src="https://scripts.gunner.online/page_footer.js">
+                    </script>
+                <script>
+                    window.onload = footer("2016")
+                    </script></br><p>
+                </div>
+    </body>
+</html>
+

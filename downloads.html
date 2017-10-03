@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Redirect | Gunner Website</title>
+        <meta http-equiv="refresh" content="0; url=https://docs.gunner.online/downloads" />
+        
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("lite")
+            </script>
+    </head>
+    
+    <body>
+        <div class="pageText">
+            <h1>Welcome to the Gunner Website redirect Portal</h1>
+            <br>
+            <span class="text">
+                This page acts as a redirect. <br>
+                <br>
+                The page you are looking for does not exist at this location. <br>
+                You should be redirected to the new location of this page.
+            </span>
+        </div>
+    </body>
+    
+    <script>
+        window.onload = function (){
+            window.location.href="https://docs.gunner.online/downloads"
+            console.log("Redirecting to https://docs.gunner.online/downloads")
+        }
+    </script>
+</html>
