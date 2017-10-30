@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Irregular Verb tester | Gunner Website</title>
+        <script src="https://scripts.gunner.online/gunnerDefaults.js">
+            </script>
+        <script>
+            window.onload = launch("standard")
+            localStorage.directory = "tools"
+            </script>
+    </head>
+    <body>
+        <noscript version="1.2" lastUpdated="09/06/17">
+            <div id="category_border" class="video">
+                <div>JavaScript Disabled<a class="footer_contact" href="https://noscript.gunner.online">Gunner Website</a></div>
+            </div>
+            <br>
+            <div class="pageText">
+                <br><span class="notice">JavaScript is disabled in your browser. As a result, the Menu bar, footer, and any scripts on this page are not available. To get the most out of your viewing experience, please enable JavaScript.</span></div>
+            <br>
+            <div id="category_border_small" class="video"></div>
+            <br>
+            <!--NoScript v1.2 (09/06/17)-->
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/layout.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="https://css.gunner.online/noscript/colour.css" type="text/css" media="screen"/>
+        </noscript>
+        <div class='pageText'>
+            <h1>German Irregular Verb tester v0.1</h1>
+            <table>
+                <tr id="trh1">
+                    <th id='th0'></th>
+                    <th id='th1'></th>
+                    <th id='th2'></th>
+                    <th id='th3'></th>
+                    <th id='th4'></th>
+                </tr>
+                <form id="gfm" onSubmit="return checkans()">
+                    <tr id="ui1">
+                        <td id='td0'></td>
+                        <td id='td1'><input id='ur1' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></td>
+                        <td id='td2'><input id='ur2' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></td>
+                        <td id='td3'><input id='ur3' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></td>
+                        <td id='td4'>to<input id='ur4' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></td>
+                        <td id='td5'><input type="submit" value="Check your answers"/></td>
+                    </tr>
+                </form>
+                <tr id="ans">
+                    <td id='ans0'></td>
+                    <td id='ans1'></td>
+                    <td id='ans2'></td>
+                    <td id='ans3'></td>
+                    <td id='ans4'></td>
+                </tr>
+                <tr id='newpage'>
+                    <td><input type="button" value="Load new verb" onClick="location.reload()"/></td>
+                </tr>
+            </table>
+            
+            <script>
+                irregverbsarr = [["German Irregular Verbs","","","","",""],["Infinitive","Present (3rd person)","Imperfect","Perfect tense","Meaning","Other"],["abbiegen","","bog an","ist abgebogen","turn off",""],["anbieten","","bot an","hat angeboten","offer",""],["anfangen","f&auml;ngt an","fing an","hat angefangen","begin",""],["backen","b&auml;ckt","backte/buk","hat gebacken","bake",""],["beginnen","","begann","hat begonnen","begin",""],["betr&uuml;gen","","betrog","hat betrogen","deceive",""],["beweisen","","bewies","hat bewiesen","prove",""],["bewerben","bewirbt","bewarb","hat beworben","apply (for jobs)",""],["bitten","","bat","hat gebeten","ask for",""],["bleiben","","blieb","ist geblieben","stay",""],["braten","br&auml;t","briet","hat gebraten","fry/roast",""],["brechen","bricht","brach","hat gebrochen","break",""],["brennen","","brannte","hat gebrannt","burn",""],["bringen","","brachte","hat gebracht","bring",""],["denken","","dachte","hat gedacht","think",""],["d&uuml;rfen","darf","durfte","hat gedurft / hat ... d&uuml;rfen","may",""],["empfehlen","empfiehlt","empfahl","hat empfohlen","recommend",""],["entscheiden","","entschied","hat entschieden","decide",""],["erschrecken","erschrickt","erschrak","ist erschrocken","be frightened",""],["essen","isst","a&szlig;","hat gegessen","eat",""],["fahren","f&auml;hrt","fuhr","ist gefahren","travel",""],["fallen","f&auml;llt","fiel","ist gefallen","fall",""],["finden","","fand","hat gefunden","find",""],["fliegen","","flog","ist geflogen","fly",""],["flie&szlig;en","","floss","ist geflossen","flow",""],["fressen","frisst","fra&szlig;","hat gefressen","eat (animal)",""],["frieren","","fror","hat gefroren","freeze",""],["geben","gibt","gab","hat gegeben","give",""],["gehen","","ging","ist gegangen","go",""],["gelingen","","gelang","ist gelungen","succeed","dat"],["gelten","gilt","galt","hat gegolten","considered to be","als"],["geschehen","geschieht","geschah","ist geschehen","happen",""],["gewinnen","","gewann","hat gewonnen","win",""],["haben","hat ","hatte","hat gehabt","have",""],["halten","h&auml;lt ","hielt","hat gehalten","hold / stop",""],["h&auml;ngen","","hing","hat gehangen","hang",""],["heben","","hob","hat gehoben","raise",""],["hei&szlig;en","","hie&szlig; ","hat gehei&szlig;en","be called",""],["helfen","hilft","half","hat geholfen","help",""],["kennen","","kannte","hat gekannt","know (someone)",""],["kommen","","kam","ist gekommen","come",""],["k&ouml;nnen","kann","konnte","hat gekonnt/hat ... k&ouml;nnen","be able",""],["laden","l&auml;dt","lud","hat geladen","load",""],["lassen","l&auml;sst","lie&szlig;","hat gelassen","let / leave / allow",""],["laufen","l&auml;uft","lief","ist gelaufen","run",""],["leiden","","litt","hat gelitten","suffer",""],["leihen","","lieh","hat geliehen","rent",""],["lesen","liest","las","hat gelesen","read",""],["liegen","","lag","ist/hat gelegen","lie",""],["messen","misst","ma&szlig;","hat gemessen","measure",""],["m&ouml;gen","mag","mochte","hat gemocht","like",""],["m&uuml;ssen","muss","musste","hat gemusst / hat ... m&uuml;ssen","have to",""],["nehmen","nimmt","nahm","hat genommen","have",""],["nennen","","nannte","hat genannt","name",""],["raten","r&auml;t","riet","hat geraten","advise",""],["riechen","","roch","hat gerochen","smell",""],["rufen","","rief","hat gerufen","call",""],["scheinen","","schien","hat geschienen","appear",""],["schieben","","schob","hat geschoben","push",""],["schlafen","schl&auml;ft","schlief","hat geschlafen","sleep",""],["schlagen","schl&auml;gt","schlug","hat geschlagen","beat / hit",""],["schlie&szlig;en","","schloss","hat geschlossen","close",""],["schneiden","","schnitt","hat geschnitten","cut",""],["schreiben","","schrieb","hat geschrieben","write",""],["schreien","","schrieb","hat geschrien","shout",""],["schweigen","","schwieg","hat geschwiegen","to be silent",""],["schwimmen","","schwamm","ist geschwommen","swim",""],["sehen","sieht","sah","hat gesehen","see",""],["sein","ist","war","ist gewesen","be",""],["senden","","sandte","hat gesandt","send",""],["senden","","sendete","hat gesendet","broadcast",""],["singen","","sang","hat gesungen","sing",""],["sinken","","sank","ist gesunken","sink",""],["sitzen","","sa&szlig;","ist / hat gesessen","sit",""],["sprechen","spricht","sprach","hat gesprochen","speak",""],["springen","","sprang","ist gesprungen","jump",""],["stehen","","stand","ist / hat gestanden","stand",""],["stehlen","stiehlt","stahl","hat gestohlen","steal",""],["steigen","","stieg","ist gestiegen","climb",""],["sterben","stirbt","starb","ist gestorben","die",""],["streiten","","stritt","hat gestritten","argue",""],["tragen","tr&auml;gt","trug","hat getragen","wear",""],["treffen","trifft","traf","hat getroffen","meet",""],["trieben","","trieb","hat getrieben","do (sport) / drive / drift",""],["treten","tritt","trat","hat getreten","step / tread",""],["trinken","","trank","hat getrunken","drink",""],["tun","","tat","hat getan","do (something)",""],["&uuml;berweisen","","&uuml;berwies","hat &uuml;berwiesen","transfer",""],["verbieten","","verbot","hat verboten","prohibit",""],["verbinden","","verband","hat verbunden","connect",""],["vergessen","vergisst","verga&szlig;","hat vergessen","forget",""],["vergleichen","","verglich","hat verglichen","compare",""],["verlieren","","verlor","hat verloren","lose",""],["verzeihen","","verzieh","hat verziehen","forgive",""],["wachsen","w&auml;chst","wuchs","ist gewachsen","grow",""],["waschen","w&auml;scht","wusch","hat gewaschen","wash",""],["wenden","","wandte","hat gewandt","turn",""],["wenden","","wendete","hat gewendet","turn",""],["werden","wird","wurde","ist geworden","become",""],["werfen","wirft","warf","hat geworfen","throw",""],["wiegen","","wog","hat gewogen","weigh",""],["wissen","wei&szlig;","wusste","hat gewusst","know",""],["ziehen","","zog","hat gezogen","pull / draw / drag",""],["zwingen","","zwang","hat gezwungen","force",""]]
+                
+                //Put table headings in
+                for (i=0;i<(irregverbsarr[1].length-1);i++){
+                    document.getElementById('th'+i).innerHTML = irregverbsarr[1][i];
+                }
+            var verbrow = 2+(Math.floor((Math.random() * (irregverbsarr.length-2)) + 1));
+            //console.log('row='+verbrow)
+            document.getElementById('td0').innerHTML = irregverbsarr[verbrow][0];
+            
+            function checkans(){
+                var ur = ["",gfm.ur1.value,gfm.ur2.value,gfm.ur3.value,gfm.ur4.value]
+                
+                for (i=1;i<(irregverbsarr[1].length-1);i++){
+                    if (ur[i] == irregverbsarr[verbrow][i]){
+                        document.getElementById('ur'+i).style.backgroundColor = '#CFC';
+                    }
+                    else{
+                        //console.log(ur[i]+' does not equal '+irregverbsarr[verbrow][i+1])
+                        document.getElementById('ur'+i).style.backgroundColor = '#FCC';
+                        document.getElementById('ans'+i).innerHTML = irregverbsarr[verbrow][i];
+                    }
+                }
+                return false
+            }
+            </script>
+        </div>
+        
+        <script src="https://scripts.gunner.online/page_footer.js">
+            </script>
+        <script>
+            window.onload = footer("standard")
+            </script>
+    </body>
+</html>
+
