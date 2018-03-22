@@ -33,7 +33,7 @@
                     <th id='th3'></th>
                     <th id='th4'></th>
                 </tr>
-                <form id="gfm" onSubmit="return checkans()">
+                <form id="gfm">
                     <tr id="ui1">
                         <td id='td0'></td>
                         <td id='td1'><input id='ur1' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/></td>
@@ -69,8 +69,8 @@
                 }
             chooseVerb()
             
-            function checkans(){
-                var ur = ["",gfm.ur1.value,gfm.ur2.value,gfm.ur3.value,gfm.ur4.value]
+            $("gfm").submit(function(e){
+                var ur = ["",gfm.ur1.value,gfm.ur2.value,gfm.ur3.value,gfm.ur4.value];
                 
                 for (i=1;i<(irregverbsarr[1].length-1);i++){
                     if (ur[i] == irregverbsarr[verbrow][i]){
@@ -82,8 +82,8 @@
                         document.getElementById('ans'+i).innerHTML = irregverbsarr[verbrow][i];
                     }
                 }
-                return false
-            }
+                return false;
+                            });
             </script>
             <p class="text">
             <b>A few notes about the program:</b><br>

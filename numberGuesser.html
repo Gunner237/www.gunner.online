@@ -83,7 +83,7 @@
                 number = getRandomIntInclusive(1, (upperBound)) //random.randint was python equivalent.
                 alert ("Ok, " + myName + ", I have a number between 1 and " + upperBound + " that I would like you to guess!")
                 
-                console.log("Number of guesses will be " + (Math.ceil(Math.sqrt(Math.sqrt(upperBound)))))
+                console.log("Number of guesses will be " + (Math.ceil(Math.sqrt(Math.sqrt(Math.abs(upperBound))))))
                 
                 while (guessesTaken < (Math.ceil(Math.sqrt(Math.sqrt(upperBound))))) {
                     var guess = prompt("Take a guess.")
